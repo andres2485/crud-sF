@@ -4,7 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title Crud de Usuarios</title>
+
+    <link rel="shortcut icon" href="~/fonts/users.ico" />
+
+   
+
+
 
 
     @Styles.Render("~/Content/css")
@@ -26,7 +32,7 @@
 </head>
 <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -36,7 +42,7 @@
                 </button>
                 <img src="~/fonts/users.ico" style="margin-top:8px;width:38px" />
 
-              
+
                 <!--   Html.ActionLink("CRUD", "Index", "Home", new { area = "" }, new { class = "navbar-brand" })-->
 
 
@@ -59,7 +65,7 @@
 
     <div class="container body-content">
 
-       
+
 
         @RenderBody()
         <hr />
@@ -67,7 +73,7 @@
             <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
         </footer>
     </div>
-
+ 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

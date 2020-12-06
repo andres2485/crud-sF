@@ -25,8 +25,10 @@ namespace demo_crud.Models
         [Required]
         [StringLength(25, MinimumLength = 10)]
         public string Direccion { get; set; }
+
+
         [Required]
-        
+        [Range(100000000, 999999999, ErrorMessage = "Teléfono debe contener 9 dígitos")]
         public int Telefono { get; set; }
 
     }

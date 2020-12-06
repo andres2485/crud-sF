@@ -1,4 +1,26 @@
-﻿@model demo_crud.Models.Usuario
+﻿<script>
+    function soloLetras(e) {
+        key = e.keyCode || e.which;
+        tecla = String.fromCharCode(key).toLowerCase();
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+        especiales = [8, 37, 39, 46];
+        tecla_especial = false
+        for (var i in especiales) {
+            if (key == especiales[i]) {
+                tecla_especial = true;
+                break;
+            }
+        }
+        if (letras.indexOf(tecla) == -1 && !tecla_especial)
+            return false;
+    }
+   
+
+</script>
+
+
+
+@model demo_crud.Models.Usuario
 
 
 
@@ -18,14 +40,14 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nombre</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="Nombre" value="@Model.Nombre">
+                <input type="text" class="form-control" onkeypress="return soloLetras(event)" name="Nombre" value="@Model.Nombre">
             </div>
             @Html.ValidationMessageFor(model => model.Nombre, null, new { @class = "text-danger" })
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Apellido</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="Apellido" value="@Model.Apellido">
+                <input type="text" class="form-control" onkeypress="return soloLetras(event)" name="Apellido" value="@Model.Apellido">
             </div>
             @Html.ValidationMessageFor(model => model.Apellido, null, new { @class = "text-danger" })
 
@@ -51,7 +73,7 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Telefono</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" name="Telefono" value="@Model.Telefono"  min="55555555" max="999999999">
+                <input type="number" class="form-control" name="Telefono" value="@Model.Telefono">
             </div>
             @Html.ValidationMessageFor(model => model.Telefono, null, new { @class = "text-danger" })
         </div>
@@ -64,9 +86,11 @@
 
                     Actualizar
                 </button>
-             
+
+
             </div>
         </div>
     </form>
 
 </div>
+
