@@ -1,0 +1,53 @@
+﻿
+
+<h3 style="text-align:center">Listado de Usuarios</h3>
+<hr />
+
+@model IEnumerable<demo_crud.Models.Usuario>
+
+<table class="table table-hover">
+    <thead class="thead thead-dark" >
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var u in Model)
+        {
+<tr>
+    <th scope="row">@u.Id</th>
+    <td>@u.Nombre</td>
+    <td>@u.Apellido</td>
+    <td>@u.Edad</td>
+    <td>@u.Direccion</td>
+    <td>@u.Telefono</td>
+    <td>
+        <a class="btn btn-success" href="@Url.Action("Ver", "Usuarios", new { id =u.Id})">
+            <img src="~/fonts/eye.ico" style="width:23px" />
+
+            Ver
+        </a>
+        <a class="btn btn-primary" href="@Url.Action("Editar", "Usuarios", new { id = u.Id})">
+            <img src="~/fonts/editar.ico" style="width:23px" />
+
+            Editar
+        </a>
+
+
+
+
+    </td>
+
+</tr>}
+
+
+
+    </tbody>
+</table>

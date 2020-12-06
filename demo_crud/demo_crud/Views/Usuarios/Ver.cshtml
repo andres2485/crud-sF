@@ -1,0 +1,54 @@
+﻿@model demo_crud.Models.Usuario
+
+
+
+
+
+<h3 style="text-align:center">Ver Usuario</h3>
+
+<hr />
+
+<div class="container" style="margin-left:20em">
+
+    <form>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Nombre</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" disabled value="@Model.Nombre">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Apellido</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" disabled value="@Model.Apellido">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Edad</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" disabled value="@Model.Edad">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Direccion</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" disabled value="@Model.Direccion">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Telefono</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" disabled  value="@Model.Telefono">
+            </div>
+        </div>
+
+
+
+
+
+    </form>
+
+</div>
